@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row mt-2 mb-5">
+    <%= form_tag('/search_range', method: :get) do  %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= text_field_tag 'search[date_from]', @search.date_from, :style => "width:100%;" %>
+      </div>
+      <div class="col-md-3">
+        <%= text_field_tag 'search[date_to]', @search.date_to, :style => "width:100%;" %>
+      </div>
+      <div class="col-md-4">
+        <%= button_tag(:class => 'btn btn-info', :type=>'submit', :style => "width:100%;") do %>
+        <i class="fa fa-search"> Search</i>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="row mt-2">
+    <div class="col-12">
+      <h3>Search Results</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped mt-1 admin-table">
+          <thead>
+            <tr>
+              <th class="align-middle text-center table-header-text w-25">Email</th>
+              <th class="align-middle text-center table-header-text w-25">First Name</th>
+              <th class="align-middle text-center table-header-text w-15">Last Name</th>
+              <th class="align-middle text-center table-header-text w-15">Amount</th>
+              <th class="align-middle text-center table-header-text w-20">Transaction Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @messages.each do |r| %>
+            <tr>
+              <td class="span1 align-middle text-center"><%= r.message_email %></td>
+              <td class="span2 align-middle text-center"><%= r.message_first_name %></td>
+              <td class="span1 align-middle text-center"><%= r.message_last_name %></td>
+              <td class="span1 align-middle text-center"><%= r.message_amount %></td>
+              <td class="span1 align-middle text-center"><%= r.created_at %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+    <%= link_to 'Back', messages_path, :class => 'btn btn-warning' %>
+
+</div>

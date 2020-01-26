@@ -1,0 +1,19 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+@import "font-awesome";
+
+.pretty th .current{
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pretty th .asc{
+  background-image: asset-data-url("arrow_up.png");
+}
+
+.pretty th .desc{
+  background-image: asset-data-url("arrow_down.png");
+}
