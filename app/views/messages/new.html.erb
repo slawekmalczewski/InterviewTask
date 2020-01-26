@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Upload Message</h1>
+
+  <div class="row">
+    <div class="col mb-3">
+      <%= render 'upload_form', client: @message %>
+
+    </div>
+
+  </div>
+
+
+  <%= link_to 'Back', messages_path, :class => 'btn btn-warning' %>
+
+</div>
